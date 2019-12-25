@@ -1,0 +1,28 @@
+{
+  "name": "project-2",
+  "version": "1.0.0",
+  "description": "Bon App-etit",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlwelbourn/Project-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mlwelbourn/Project-2/issues"
+  },
+  "homepage": "https://github.com/mlwelbourn/Project-2#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.7",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.8.1"
+  }
+}
