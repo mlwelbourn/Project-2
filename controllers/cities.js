@@ -3,6 +3,7 @@ const router = express.Router();
 
 const City = require('../models/city');
 const Restaurant = require('../models/restaurant')
+const Meal = require('../models/meal');
 
 
 //new route

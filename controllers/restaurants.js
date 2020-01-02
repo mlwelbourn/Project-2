@@ -3,6 +3,7 @@ const router = express.Router();
 
 const City = require('../models/city');
 const Restaurant = require('../models/restaurant');
+const Meal = require('../models/meal');
 
 
 //new restaurant
@@ -46,14 +47,30 @@ router.get('/', async (req, res) => {
 //Show Route
 router.get('/:id', async (req, res) => {
 	try{
-		const foundRestaurants = await (await Restaurant.findById(req.params.id)).populated('city');
+		const foundRestaurants = await Restaurant.findById(req.params.id).populate('city');
 		res.render('restaurant/show.ejs', {
 			restaurant: foundRestaurants
 		})
 	} catch (err) {
 		res.send(err);
 	}
-})
+});
+
+// Delete route
+router.delete('/:id', async (req, res) => {
+	try {
+		await Restaurant.findByIdAndRemove(req.params.id);
+
+		await Meal.deleteMany({ restaurant: req.params.id });		
+		
+		res.redirect('/restaurants');
+	} catch (err) {
+		res.send(err);
+	}
+});
+
+
+
 
 
 module.exports = router

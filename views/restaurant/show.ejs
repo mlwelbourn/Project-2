@@ -20,17 +20,23 @@
 		</header>
 		<main>
 			<section>
-				<h2> <%= restaurant.name %></h2>
-				<h3>Author: <%= article.author.name %></h3>
-				<p><%= article.body %></p>
+                <h2> <%= restaurant.name %></h2>
+                <h3><%= restaurant.location %></h3>
+                <h3> <%= restaurant.city.name %></h3>
+                <h3>Food Rating:<%= restaurant.rating.food %></h3>
+                <h3> Drink Rating:<%= restaurant.rating.drinks %></h3>
+                <h3>Service Rating: <%= restaurant.rating.service %></h3>
+                <h3>Ambiance Rating: <%= restaurant.rating.ambiance %></h3>
+                <p>Comments: <%=restaurant.comments %></p>
+				
             </section>
             <section>
-                <form action="/articles/<%= article._id %>?_method=DELETE" method="POST">
-                    <input type="submit" value="Delete Article"/>
+                <form action="/restaurants/<%= restaurant._id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete Restaurant"/>
                 </form>
             </section>
             <section>
-                <a href="/articles/<%= article._id %>/edit">Edit</a>
+                <a href="/restaurants/<%= restaurant._id %>/edit">Edit</a>
             </section>
 		</main>
 	</body>

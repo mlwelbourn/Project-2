@@ -5,10 +5,10 @@ const restaurantSchema = mongoose.Schema({
     location: String,
     comments: String,
     rating: {
-        food: {type: Number, max: 10},
-        drinks: {type: Number, max: 10},
-        service: {type: Number, max: 10},
-        ambiance: {type: Number, max: 10}
+        food: {type: Number, max: 5},
+        drinks: {type: Number, max: 5},
+        service: {type: Number, max: 5},
+        ambiance: {type: Number, max: 5}
     },
     city: {
         type: mongoose.Schema.Types.ObjectId, 

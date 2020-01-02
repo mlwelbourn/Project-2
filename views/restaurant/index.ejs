@@ -21,10 +21,10 @@
         <main>
 			
             <ul>
-                <% for(let i = 0; i < articles.length; i++) { %>
+                <% for(let i = 0; i < restaurant.length; i++) { %>
                     <li>
-                        <a href="/articles/<%= articles[i]._id %>"><%= articles[i].title %></a>
-                    </li>
+                        <a href="/restaurants/<%= restaurant[i]._id %>"><%= restaurant[i].name %></a>
+					</li>
                 <% } %>
             </ul>
         </main>
