@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>City Creator</title>
+    </head>
+    <body>
+        <header>
+            <h1>Create a City</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/cities">City Index</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <form action="/cities" method="POST">
+                <label>Name</label>
+                <input type="text" name="name" placeholder="City Name" />
+                <input type="submit" value="Create City" />
+            </form>
+        </main>
+    </body>
+</html>

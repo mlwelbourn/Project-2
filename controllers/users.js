@@ -36,7 +36,6 @@ router.post('/registration', async (req, res) => {
     const userDbEntry = {
         username: req.body.username,
         password: passwordHash,
-        email: req.body.email
     }
 
     try {

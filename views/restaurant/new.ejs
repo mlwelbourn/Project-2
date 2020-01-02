@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<header>
+			<h1>Create a Restaurant</h1>
+			<nav>
+				<ul>
+					<li>
+						<a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/cities">Back</a>
+                    </li>
+					<li>
+						<a href="/restaurants">Restaurant Index</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<form action="/restaurants" method="POST">
+				<select name="city">
+					<% for(let i = 0; i < city.length; i++) { %>
+						<option value="<%= city[i]._id %>"><%= city[i].name %></option>
+					<% } %>
+				</select><br>
+                <input type="text" name="name" placeholder="Name" /><br/>
+                <input type="text" name="location" placeholder="Address" /><br/>
+                <input type="number" name="food" placeholder="Food Rating" /><br/>
+                <input type="number" name="drinks" placeholder="Drinks Rating"/><br/>
+                <input type="number" name="service" placeholder="Service Rating" /><br/>
+                <input type="number" name="ambiance" placeholder="Ambiance Rating" /><br/>
+                Comments: <br/><textarea name="comments"></textarea><br/>
+                
+				<input type="submit" value="Create Restaurant"/>
+			</form>
+		</main>
+	</body>
+</html>

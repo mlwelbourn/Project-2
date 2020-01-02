@@ -14,12 +14,12 @@ app.use(session({
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 
-// //controllers
-// const cityController = require('./controllers/cities.js')
-// app.use('/cities', cityController);
+//controllers
+const cityController = require('./controllers/cities.js')
+app.use('/cities', cityController);
 
-// const restaurantController = require('./controllers/restaurants.js');
-// app.use('/restaurants', restaurantController);
+const restaurantController = require('./controllers/restaurants.js');
+app.use('/restaurants', restaurantController);
 
 // const mealController = require('./controllers/meals.js');
 // app.use('/meals', mealController);

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Appetite</title>
+    </head>
+    <body>
+        <header>
+            <h1><%= city.name %></h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/cities">City Index</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            
+    
+            <ul>
+                <% for(rest in restaurant) { %>
+                    <li><a href="/restaurants/<%= restaurant[rest]._id %>"><%= restaurant[rest].name %></a></li>
+                <% } %>
+            </ul>
+            <section>
+                <form action="/cities/<%= city._id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete City" />
+                </form>
+            </section>
+            <section>
+                <a href="/cities/<%= city._id %>/edit">Edit</a>
+            </section>
+            <section>
+                <a href="/restaurants/new">Create a Restaurant</a>
+            </section>
+        </main>
+    </body>
+</html>
