@@ -69,6 +69,34 @@ router.delete('/:id', async (req, res) => {
 	}
 });
 
+// Edit route
+router.get('/:id/edit', async (req, res) => {
+	try {
+		const foundRestaurant = await Restaurant.findById(req.params.id);
+
+		const allCities = await City.find();
+
+		res.render('restaurant/edit.ejs', {
+			restaurant: foundRestaurant,
+			city: allCities,
+		});
+		
+	} catch (err) {
+		res.send(err);
+	}
+});
+
+// Update route
+router.put('/:id', async (req, res) => {
+	try {
+		await Restaurant.findByIdAndUpdate(req.params.id, req.body);
+		
+		res.redirect(`/restaurants/${req.params.id}`);
+	} catch (err) {
+		res.send(err);
+	}
+});
+
 
 
 

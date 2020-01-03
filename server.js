@@ -13,6 +13,7 @@ app.use(session({
 }));
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
+app.use(express.static('public'));
 
 //controllers
 const cityController = require('./controllers/cities.js')

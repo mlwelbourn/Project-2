@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<header>
+			<h1><%= restaurant.name %></h1>
+			<nav>
+				<ul>
+					<li>
+						<a href="/">Home</a>
+					</li>
+					<li>
+						<a href="/restaurants">Restaurant Index</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<form action="/restaurants/<%= restaurant._id %>?_method=PUT" method="POST">
+				<select name="city">
+					<% for(let i = 0; i < city.length; i++) { %>
+						<option value="<%= city[i]._id %>"
+							<% if(city[i]._id.toString() === restaurant.city._id.toString()) { %>
+								selected
+							<% } %>
+						><%= city[i].name %></option>
+					<% } %>
+				</select><br/>
+				<input type="text" name="name" value="<%= restaurant.name %>"/><br/>
+                <input type="text" name="restaurant.location" value="<%= restaurant.location %>"/><br/>
+                <input type="number" name="restaurant.rating.food" value="<%= restaurant.rating.food%>"/><br/>
+                <input type="number" name="restaurant.rating.drinks" value="<%= restaurant.rating.drinks%>"/><br/>
+                <input type="number" name="restaurant.rating.service" value="<%= restaurant.rating.service%>"/><br/>
+                <input type="number" name="restaurant.rating.ambiance" value="<%= restaurant.rating.ambiance%>"/><br/>
+                
+                <textarea name="comments"><%= restaurant.comments %></textarea><br/>
+				<input type="submit" value="Update Restaurant"/>
+			</form>
+		</main>
+	</body>
+</html>

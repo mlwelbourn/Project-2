@@ -1,50 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <%- include('partials/head.ejs') %>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Restaurant App</title>
 </head>
 <body>
-    <header> 
-        <h1> User Profile Page</h1>
-        <nav> 
-            <ul>
-                <li>
-                    <a href="/cities">Cities</a>
-                </li>
+        <% if(!logged) { %>
+        <div class="titleContainer">
+            <h1 class="title jumbotron"> Welcome to App-etite</h1>
+        </div>
+        <div class="prompt">
+        <h4> Please Login or Register</h4>
+        </div>
+    
+ 
+                <% } %>
                 <% if(logged) { %>
-                    <li>
-                        <a href="/auth/logout">Logout</a>
-                    </li>
-                    <li>
-                        Hello, <%= username %>
-                    </li>
-                    <% } %>
+                    <div class="titleContainer">
+                        
+                    <h1 class="title jumbotron">Bon App-etite<br> <a class="logout" href="/auth/logout">Logout</a> </h1>
+                    
+                    </div>
+                    <nav> 
+                        <ul class="nav nav-pills nav-fill">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/cities">Cities<div class="cities"></div></a>
+                    
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/restaurants">Restaurants<div class="restaurants"></div></a>
+                            </li>
+              
             </ul>
         </nav>
+
+        
+            
+        
+        <% } %>
+        
+        <div class="main">
         <main>
             <%= message %>
             <% if(!logged) { %>
                 <h4>Login</h4>
                 <form action="/auth/login" method="POST">
-                    <input type="text" name="username" placeholder="Username" /><br>
-                    <input type="password" name="password" placeholder="Password" /><br>
-                    <button type="submit">Login</button>
+                    <input class="login" type="text" name="username" placeholder="Username" /><br>
+                    <input class="login" type="password" name="password" placeholder="Password" /><br>
+                    <button class="btn btn-dark" type="submit">Login</button>
                 </form>
                 <h4>Register</h4>
                 <form action="/auth/registration" method="POST">
-                <input type="text" name="username" placeholder="Username" /><br>
-                <input type="password" name="password" placeholder="Password" /><br>
-                <button type="submit">Register</button>
+                <input class="register" type="text" name="username" placeholder="Username" /><br>
+                <input class="register" type="password" name="password" placeholder="Password" /><br>
+                <input class="register" type="text" name="firstname" placeholder="First Name" /><br>
+                <input class="register" type="text" name="lastname" placeholder="Last Name" /><br>
+                <button class="btn btn-dark" type="submit">Register</button>
                 
                 
                 
                 </form>
                 <% } %>
         </main>
-    </header>
+
+        </div>
     
 </body>
 </html>

@@ -87,7 +87,7 @@ router.delete('/:id', async (req, res) => {
 	try {
 		await City.findByIdAndRemove(req.params.id);
 
-		await Restaurant.deleteMany({ author: req.params.id });		
+		await Restaurant.deleteMany({ city: req.params.id });		
 		
 		res.redirect('/cities');
 	} catch (err) {

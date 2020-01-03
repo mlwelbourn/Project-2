@@ -1,0 +1,75 @@
+
+.title {
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    font-size: 50px;
+}
+.lower-title {
+    text-align: center;
+    font-size: 44px;
+    font-family: 'Great Vibes';
+}
+
+.prompt {
+    width: 100%;
+    text-align: center;
+    font-family: helvetica;
+}
+
+.main {
+    text-align: center;
+    font-family: helvetica;
+
+}
+.main-container {
+    background-image: url("images/city.jpeg");
+    height: 350px;
+}
+
+.login {
+    box-shadow: 2px 2px grey;
+    border-color: rgb(164, 199, 199);
+}
+.register {
+    box-shadow: 2px 2px grey;
+    border-color: rgb(164, 199, 199);
+}
+
+.logout {
+    font-family: helvetica;
+    font-size: 18px;
+}
+.home {
+    font-family: helvetica;
+    font-size: 18px;
+}
+
+.nav-link {
+    font-size: 20px;
+}
+
+.cities {
+    background-image: url("images/city.jpeg");
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+   background-size: cover;
+}
+.restaurants {
+    background-image: url("images/restaurant.jpg");
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+   background-size: cover;
+}
+
+.city-links {
+    font-size: 24px;
+}
+
+.footer {
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    font-family: 'Great Vibes';
+}

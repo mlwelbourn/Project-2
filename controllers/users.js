@@ -36,11 +36,13 @@ router.post('/registration', async (req, res) => {
     const userDbEntry = {
         username: req.body.username,
         password: passwordHash,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
     }
 
     try {
         const createdUser = await User.create(userDbEntry);
-        req.session.username = foundUser.username;
+        req.session.username = createdUser.username;
         req.session.logged = true;
         res.redirect('/');
     } catch(err) {
