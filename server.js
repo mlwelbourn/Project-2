@@ -22,14 +22,13 @@ app.use('/cities', cityController);
 const restaurantController = require('./controllers/restaurants.js');
 app.use('/restaurants', restaurantController);
 
-// const mealController = require('./controllers/meals.js');
-// app.use('/meals', mealController);
+const mealController = require('./controllers/meals.js');
+app.use('/meals', mealController);
 
 const userController = require('./controllers/users.js');
 app.use('/auth', userController);
 
-// const seedController = require('./controllers/seeds.js');
-// app.use('/seed', seedController);
+
 
 app.get('/', (req, res)=>{
     res.render('index.ejs', {

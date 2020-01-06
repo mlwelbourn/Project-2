@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<%- include('../partials/head.ejs') %>
+		<meta charset="utf-8">
+		<title><%= meal.entree %> by <%= meal.restaurant.name %></title>
+	</head>
+	<body>
+		<header>
+			<h1 class="title jumbotron"><%= meal.entree %><br><a class="home" href="/">Home</a><br><a class="home" href="/restaurants">Restaurant Index</a></h1>
+	
+		</header>
+		<div class="main">
+		<main>
+  
+			
+			<section>
+                <h4><%= meal.restaurant.name %></h4>
+                <h4>Appetizer: <%= meal.appetizer %></h4>
+                <p>Appetizer Rating: <%= meal.rating.appetizer %></p>
+                <h4>Salad: <%= meal.salad %></h4>
+                <p>Salad Rating: <%= meal.rating.salad %></p>
+                <h4>Entree: <%= meal.entree %></h4>
+                <p>Entree Rating: <%= meal.rating.entree %></p>
+                <h4> Drink: <%= meal.drink %></h4>
+                <p>Drink Rating: <%= meal.rating.drink %></p>
+                <h4>Dessert: <%= meal.dessert %></h4>
+                <p>Dessert Rating: <%= meal.rating.dessert %></p>
+                <p>Comments: <%=meal.comments %></p>
+				
+			</section>
+			<section>
+                <a class="btn btn-dark" href="/meals/<%= meal._id %>/edit">Edit</a>
+            </section>
+            <section>
+                <form action="/meals/<%= meal._id %>?_method=DELETE" method="POST">
+                    <input class="btn btn-dark" type="submit" value="Delete Meal"/>
+                </form>
+            </section>
+   
+		</main>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<%- include('../partials/head.ejs') %>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<header>
+			<h1 class="title jumbotron">Create a Meal<br><a class="home" href="/">Home</a><br><a class="home" href="/restaurants">Restaurant Index</a></h1>
+		
+		</header>
+		<div class="main">
+		<main>
+			<form action="/meals" method="POST">
+				<select class="btn btn-dark" name="restaurant">
+					<% for(let i = 0; i < restaurant.length; i++) { %>
+						<option value="<%= restaurant[i]._id %>"><%= restaurant[i].name %></option>
+					<% } %>
+				</select><br>
+                <input class="login" type="text" name="appetizer" placeholder="Appetizer" /><br/>
+				<input class="login" type="text" name="salad" placeholder="Salad" /><br/>
+                <input class="login" type="text" name="entree" placeholder="Entree" required/><br/>
+                <input class="login" type="text" name="drink" placeholder="Drink"/><br/>
+                <input class="login" type="text" name="dessert" placeholder="Dessert"/><br/>
+                <input class="login" type="number" max="5" min="1" width="200px" name="rating.appetizer" placeholder="Appetizer Rating" /><br/>
+                <input class="login" type="number" max="5" min="1" name="rating.salad" placeholder="Salad Rating"/><br/>
+                <input class="login" type="number" max="5" min="1" name="rating.entree" placeholder="Entree Rating" /><br/>
+                <input class="login" type="number" max="5" min="1" name="rating.drink" placeholder="Drink Rating" /><br/>
+                <input class="login" type="number" max="5" min="1" name="rating.dessert" placeholder="Dessert Rating" /><br/>
+                Comments: <br/><textarea name="comments"></textarea><br/>
+                
+				<input class="btn btn-dark" type="submit" value="Create Meal"/>
+			</form>
+		</main>
+		</div>
+	</body>
+</html>

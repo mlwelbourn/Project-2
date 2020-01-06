@@ -6,6 +6,7 @@ const mealSchema = mongoose.Schema({
     entree: {type: String, required: true},
     drink: String,
     dessert: String,
+    comments: String,
     rating: {
         appetizer: {type: Number, max: 10},
         salad: {type: Number, max: 10},

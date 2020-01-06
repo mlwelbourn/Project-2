@@ -22,12 +22,12 @@
 						><%= city[i].name %></option>
 					<% } %>
 				</select><br/>
-				<input class="login" type="text" name="name" value="<%= restaurant.name %>"/><br/>
+				<input class="login" type="text" name="name" value="<%= restaurant.name %>" required/><br/>
                 <input class="login" type="text" name="restaurant.location" value="<%= restaurant.location %>"/><br/>
-                <input class="login" type="number" name="restaurant.rating.food" value="<%= restaurant.rating.food%>"/><br/>
-                <input class="login" type="number" name="restaurant.rating.drinks" value="<%= restaurant.rating.drinks%>"/><br/>
-                <input class="login" type="number" name="restaurant.rating.service" value="<%= restaurant.rating.service%>"/><br/>
-                <input class="login" type="number" name="restaurant.rating.ambiance" value="<%= restaurant.rating.ambiance%>"/><br/>
+                <input class="login" type="number" max="5" min="1" name="restaurant.rating.food" value="<%= restaurant.rating.food%>"/><br/>
+                <input class="login" type="number" max="5" min="1" name="restaurant.rating.drinks" value="<%= restaurant.rating.drinks%>"/><br/>
+                <input class="login" type="number" max="5" min="1" name="restaurant.rating.service" value="<%= restaurant.rating.service%>"/><br/>
+                <input class="login" type="number" max="5" min="1" name="restaurant.rating.ambiance" value="<%= restaurant.rating.ambiance%>"/><br/>
                 
                 <textarea name="comments"><%= restaurant.comments %></textarea><br/>
 				<input class="btn btn-dark" type="submit" value="Update Restaurant"/>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<%- include('../partials/head.ejs') %>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<header>
+			<h1 class="title jumbotron"><%= meal.entree %><br><a class="home" href="/">Home</a><br> <a class="home" href="/restaurants">Restaurant Index</a></h1>
+
+		</header>
+		<div class="main">
+		<main>
+			<form action="/meals/<%= meal._id %>?_method=PUT" method="POST">
+				<select class="btn btn-dark" name="restaurant">
+					<% for(let i = 0; i < restaurant.length; i++) { %>
+						<option value="<%= restaurant[i]._id %>"
+							<% if(restaurant[i]._id.toString() === meal.restaurant._id.toString()) { %>
+								selected
+							<% } %>
+						><%= restaurant[i].name %></option>
+					<% } %>
+                </select><br/>
+                <input class="login" type="text" name="appetizer" value="<%= meal.appetizer %>"/><br/>
+                <input class="login" type="text" name="salad" value="<%= meal.salad %>"/><br/>
+				<input class="login" type="text" name="entree" value="<%= meal.entree %>" required/><br/>
+                <input class="login" type="text" name="drink" value="<%= meal.drink %>"/><br/>
+                <input class="login" type="text" name="dessert" value="<%= meal.dessert %>"/><br/>
+                <input class="login" type="number" min="1" max="5" name="meal.rating.appetizer" value="<%= meal.rating.appetizer%>"/><br/>
+                <input class="login" type="number" min="1" max="5" name="meal.rating.salad" value="<%= meal.rating.salad%>"/><br/>
+                <input class="login" type="number" min="1" max="5" name="meal.rating.entree" value="<%= meal.rating.entree%>"/><br/>
+                <input class="login" type="number" min="1" max="5" name="meal.rating.drink" value="<%= meal.rating.drink%>"/><br/>
+                <input class="login" type="number" min="1" max="5" name="meal.rating.dessert" value="<%= meal.rating.dessert%>"/><br/>
+                
+                <textarea name="comments"><%= meal.comments %></textarea><br/>
+				<input class="btn btn-dark" type="submit" value="Update Meal"/>
+			</form>
+		</main>
+		</div>
+	</body>
+</html>

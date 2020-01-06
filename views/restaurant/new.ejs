@@ -21,13 +21,13 @@
 						<option value="<%= city[i]._id %>"><%= city[i].name %></option>
 					<% } %>
 				</select><br>
-                <input class="login" type="text" name="name" placeholder="Name" /><br/>
+                <input class="login" type="text" name="name" placeholder="Name" required /><br/>
 				<input class="login" type="text" name="location" placeholder="Address" /><br/>
 				<input class="login" type="text" name="type" placeholder="Type of Food"/><br/>
-                <input class="login" type="number" name="rating.food" placeholder="Food Rating" /><br/>
-                <input class="login" type="number" name="rating.drinks" placeholder="Drinks Rating"/><br/>
-                <input class="login" type="number" name="rating.service" placeholder="Service Rating" /><br/>
-                <input class="login" type="number" name="rating.ambiance" placeholder="Ambiance Rating" /><br/>
+                <input class="login" type="number" max="5" min="1" name="rating.food" placeholder="Food Rating" /><br/>
+                <input class="login" type="number" max="5" min="1" name="rating.drinks" placeholder="Drinks Rating"/><br/>
+                <input class="login" type="number" max="5" min="1" name="rating.service" placeholder="Service Rating" /><br/>
+                <input class="login" type="number" max="5" min="1" name="rating.ambiance" placeholder="Ambiance Rating" /><br/>
                 Comments: <br/><textarea name="comments"></textarea><br/>
                 
 				<input class="btn btn-dark" type="submit" value="Create Restaurant"/>

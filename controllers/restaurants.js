@@ -48,8 +48,10 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
 	try{
 		const foundRestaurants = await Restaurant.findById(req.params.id).populate('city');
+		const restaurantMeal = await Meal.find({ restaurant: foundRestaurants._id });
 		res.render('restaurant/show.ejs', {
-			restaurant: foundRestaurants
+			restaurant: foundRestaurants,
+			meal: restaurantMeal
 		})
 	} catch (err) {
 		res.send(err);
