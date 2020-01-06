@@ -21,9 +21,15 @@
     font-family: helvetica;
 
 }
-.main-container {
+.main-city-container {
     background-image: url("images/city.jpeg");
     height: 350px;
+}
+
+.main-restaurant-container {
+    background-image: url("images/restaurant2.jpg");
+    height: 350px;
+    background-position: center -50%;
 }
 
 .login {
@@ -65,6 +71,7 @@
 
 .city-links {
     font-size: 24px;
+    background: white;
 }
 
 .footer {
@@ -72,4 +79,8 @@
     color: black;
     font-size: 24px;
     font-family: 'Great Vibes';
+}
+
+.show-nav {
+    text-align: center;
 }

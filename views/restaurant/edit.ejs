@@ -1,27 +1,19 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		
+		<%- include('../partials/head.ejs') %>
 		<meta charset="utf-8">
 		<title></title>
 	</head>
 	<body>
 		<header>
-			<h1><%= restaurant.name %></h1>
-			<nav>
-				<ul>
-					<li>
-						<a href="/">Home</a>
-					</li>
-					<li>
-						<a href="/restaurants">Restaurant Index</a>
-					</li>
-				</ul>
-			</nav>
+			<h1 class="title jumbotron"><%= restaurant.name %><br><a class="home" href="/">Home</a><br> <a class="home" href="/restaurants">Restaurant Index</a></h1>
+
 		</header>
+		<div class="main">
 		<main>
 			<form action="/restaurants/<%= restaurant._id %>?_method=PUT" method="POST">
-				<select name="city">
+				<select class="btn btn-dark" name="city">
 					<% for(let i = 0; i < city.length; i++) { %>
 						<option value="<%= city[i]._id %>"
 							<% if(city[i]._id.toString() === restaurant.city._id.toString()) { %>
@@ -30,16 +22,17 @@
 						><%= city[i].name %></option>
 					<% } %>
 				</select><br/>
-				<input type="text" name="name" value="<%= restaurant.name %>"/><br/>
-                <input type="text" name="restaurant.location" value="<%= restaurant.location %>"/><br/>
-                <input type="number" name="restaurant.rating.food" value="<%= restaurant.rating.food%>"/><br/>
-                <input type="number" name="restaurant.rating.drinks" value="<%= restaurant.rating.drinks%>"/><br/>
-                <input type="number" name="restaurant.rating.service" value="<%= restaurant.rating.service%>"/><br/>
-                <input type="number" name="restaurant.rating.ambiance" value="<%= restaurant.rating.ambiance%>"/><br/>
+				<input class="login" type="text" name="name" value="<%= restaurant.name %>"/><br/>
+                <input class="login" type="text" name="restaurant.location" value="<%= restaurant.location %>"/><br/>
+                <input class="login" type="number" name="restaurant.rating.food" value="<%= restaurant.rating.food%>"/><br/>
+                <input class="login" type="number" name="restaurant.rating.drinks" value="<%= restaurant.rating.drinks%>"/><br/>
+                <input class="login" type="number" name="restaurant.rating.service" value="<%= restaurant.rating.service%>"/><br/>
+                <input class="login" type="number" name="restaurant.rating.ambiance" value="<%= restaurant.rating.ambiance%>"/><br/>
                 
                 <textarea name="comments"><%= restaurant.comments %></textarea><br/>
-				<input type="submit" value="Update Restaurant"/>
+				<input class="btn btn-dark" type="submit" value="Update Restaurant"/>
 			</form>
 		</main>
+		</div>
 	</body>
 </html>

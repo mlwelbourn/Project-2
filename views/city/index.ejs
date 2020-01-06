@@ -9,11 +9,8 @@
 </head>
 <body>
     <header>
-        <h1 class="title jumbotron">Cities<br> <a class="home" href="/">Home</a></h1>
+        <h1 class="title jumbotron">Your Cities<br> <a class="home" href="/">Home</a><br></h1>
         <nav>
-            <% if(city.length > 0) { %>
-                <h2 class="lower-title">Your Cities</h2>
-                <% } %>
             <ul class="nav nav-pills nav-fill">
         
                 <li class="nav-item">
@@ -22,22 +19,35 @@
             </ul>
         </nav>
     </header>
-    <div class="main-container">
+    <div class="main-city-container main">
     <main>
  
-        <ul class="nav nav-pills nav-fill">
-            <% for(let i = 0; i < city.length; i++) { %>
-                <li class="nav-item">
-                    <a class="city-links" href="/cities/<%= city[i]._id %>"><%= city[i].name %></a>
-                </li>
-            <% } %>
-        </ul>
+       
+           
+                <div class="dropdown show">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Cities
+                    </a>
+                  
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <% for(let i = 0; i < city.length; i++) { %>
+                      <a class="dropdown-item" href="/cities/<%=city[i]._id %>"><%= city[i].name %></a>
+                      <% } %>
+                    </div>
+                  </div>
+              
+          
     </main>
     </div>
     <footer>
         <p class="footer">Eat, drink, and be merry. Tomorrow you may die</p>
     </footer>
 </body>
-    
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 </html>

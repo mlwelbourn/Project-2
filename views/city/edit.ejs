@@ -1,29 +1,23 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<%- include('../partials/head.ejs') %>
 		<meta charset="utf-8">
 		<title></title>
 	</head>
 	<body>
 		<header>
-			<h1> <%= city.name %></h1>
-			<nav>
-				<ul>
-					<li>
-						<a href="/">Home</a>
-					</li>
-					<li>
-						<a href="/cities">City Index</a>
-					</li>
-				</ul>
-			</nav>
+			<h1 class="title jumbotron"> <%= city.name %><br> <a class="home" href="/">Home</a><br><a class="home" href="/cities">City Index</a></h1>
+
 		</header>
+		<div class="main main-city-container">
 		<main>
 			
 			<form action="/cities/<%= city._id %>?_method=PUT" method="POST">
-				<input type="text" name="name" value="<%= city.name %>"/><br/>
-				<input type="submit" value="Update City"/>
+				<input class="login" type="text" name="name" value="<%= city.name %>"/><br/>
+				<input class="btn btn-dark" type="submit" value="Update City"/>
 			</form>
 		</main>
+		</div>
 	</body>
 </html>

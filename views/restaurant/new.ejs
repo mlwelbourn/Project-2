@@ -1,45 +1,38 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		
+		<%- include('../partials/head.ejs') %>
 		<meta charset="utf-8">
 		<title></title>
 	</head>
 	<body>
 		<header>
-			<h1>Create a Restaurant</h1>
+			<h1 class="title jumbotron">Create a Restaurant<br><a class="home" href="/">Home</a><br><a class="home" href="/restaurants">Restaurant Index</a></h1>
 			<nav>
 				<ul>
-					<li>
-						<a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="/cities">Back</a>
-                    </li>
-					<li>
-						<a href="/restaurants">Restaurant Index</a>
-					</li>
 				</ul>
 			</nav>
 		</header>
+		<div class="main">
 		<main>
 			<form action="/restaurants" method="POST">
-				<select name="city">
+				<select class="btn btn-dark" name="city">
 					<% for(let i = 0; i < city.length; i++) { %>
 						<option value="<%= city[i]._id %>"><%= city[i].name %></option>
 					<% } %>
 				</select><br>
-                <input type="text" name="name" placeholder="Name" /><br/>
-				<input type="text" name="location" placeholder="Address" /><br/>
-				<input type="text" name="type" placeholder="Type of Food"/><br/>
-                <input type="number" name="rating.food" placeholder="Food Rating" /><br/>
-                <input type="number" name="rating.drinks" placeholder="Drinks Rating"/><br/>
-                <input type="number" name="rating.service" placeholder="Service Rating" /><br/>
-                <input type="number" name="rating.ambiance" placeholder="Ambiance Rating" /><br/>
+                <input class="login" type="text" name="name" placeholder="Name" /><br/>
+				<input class="login" type="text" name="location" placeholder="Address" /><br/>
+				<input class="login" type="text" name="type" placeholder="Type of Food"/><br/>
+                <input class="login" type="number" name="rating.food" placeholder="Food Rating" /><br/>
+                <input class="login" type="number" name="rating.drinks" placeholder="Drinks Rating"/><br/>
+                <input class="login" type="number" name="rating.service" placeholder="Service Rating" /><br/>
+                <input class="login" type="number" name="rating.ambiance" placeholder="Ambiance Rating" /><br/>
                 Comments: <br/><textarea name="comments"></textarea><br/>
                 
-				<input type="submit" value="Create Restaurant"/>
+				<input class="btn btn-dark" type="submit" value="Create Restaurant"/>
 			</form>
 		</main>
+		</div>
 	</body>
 </html>

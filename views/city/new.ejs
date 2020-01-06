@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <%- include('../partials/head.ejs') %>
         <meta charset="utf-8">
         <title>City Creator</title>
     </head>
     <body>
         <header>
-            <h1>Create a City</h1>
+            <h1 class="title jumbotron">Create a City<br> <a class="home" href="/">Home</a><br> <a class="home" href="/cities">City Index</a></h1>
+            <div class="main">
             <nav>
-                <ul>
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="/cities">City Index</a>
-                    </li>
-                </ul>
+                <form action="/cities" method="POST">
+                    <label>Name</label>
+                    <input class="login" type="text" name="name" placeholder="City Name" />
+                    <input class="btn btn-dark" type="submit" value="Create City" />
+                </form>
             </nav>
+            </div>
         </header>
+        <div class="main-city-container">
         <main>
-            <form action="/cities" method="POST">
-                <label>Name</label>
-                <input type="text" name="name" placeholder="City Name" />
-                <input type="submit" value="Create City" />
-            </form>
+    
         </main>
+        </div>
+        <footer>
+            <p class="footer">Eat, drink, and be merry. Tomorrow you may die</p>
+        </footer>
     </body>
+
 </html>
