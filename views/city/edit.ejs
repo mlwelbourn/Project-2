@@ -16,7 +16,7 @@
 		<main>
 			
 			<form action="/cities/<%= city._id %>?_method=PUT" method="POST">
-				<input class="login" type="text" name="name" value="<%= city.name %>"/><br/>
+				<input class="login" type="text" name="name" value="<%= city.name %>" required/><br/>
 				<input class="btn btn-dark" type="submit" value="Update City"/>
 			</form>
 		</main>
