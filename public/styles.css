@@ -40,6 +40,7 @@
 .register {
     box-shadow: 2px 2px grey;
     border-color: rgb(164, 199, 199);
+    width: 20%;
 }
 
 .logout {
