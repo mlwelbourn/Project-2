@@ -90,14 +90,12 @@
 
 @media (max-width: 600px) {
     .cities, .restaurants {
-        width: 400px;
+        width: 250px;
         height: 120px;
 
         
 
     }
-}
-@media (max-width: 600px) {
     .login, .register {
         width: 300px;
     }
