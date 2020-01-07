@@ -26,6 +26,7 @@
     height: 350px;
 }
 
+
 .main-restaurant-container {
     background-image: url("images/restaurant2.jpg");
     height: 350px;
@@ -86,3 +87,13 @@
 .show-nav {
     text-align: center;
 }
+
+@media (max-width: 600px) {
+    .cities, .restaurants, .main-city-container, .main-restaurant-container {
+        width: 450px;
+        height: 120px;
+        
+
+    }
+}
+
